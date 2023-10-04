@@ -3,7 +3,7 @@ import Title from "@/components/pageTitle";
 
 export default function Home() {
   return (
-    <main className="dark">
+    <main className="">
       Hey kiddos
       <Title title="Next Step" />
     </main>
