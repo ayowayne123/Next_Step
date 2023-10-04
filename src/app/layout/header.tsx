@@ -21,9 +21,9 @@ function Header() {
           <Link className="capitalize" href="/newsletter">
             newsletter
           </Link>
-          <div>
+          {/* <div>
             <Mode />
-          </div>
+          </div> */}
         </div>
         <div className="flex md:hidden">
           <Menu />

@@ -34,25 +34,16 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       const currentTheme = localStorage.getItem("theme");
       if (currentTheme === "dark") {
         return "dark";
-      } else if (
-        !currentTheme &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-      ) {
-        return "dark";
       }
     } catch (error) {
       // Handle any errors when accessing localStorage (e.g., on the server side)
     }
-    return "light"; // Default to light if localStorage is not available
+    return "light"; // Default to light if localStorage is not available or theme is not set
   });
 
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
-    if (
-      currentTheme === "dark" ||
-      (!currentTheme &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
+    if (currentTheme === "dark") {
       setTheme("dark");
       document.documentElement.classList.add("dark");
     } else {

@@ -6,7 +6,7 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: ["class"],
+  // darkMode: ["class"],
   theme: {
     colors: {
       transparent: "transparent",
@@ -18,6 +18,20 @@ export default {
       darkGrey: "#C0C5D0",
       lightPurple: "#6941C6",
       darkPurple: "#7F56D9",
+      categoryRedText: "#FF0474", // Brighter red for category text
+      categoryRedBg: "#FFDADA", // Slightly brighter background for category
+      categoryBlueText: "#3538CD", // Brighter blue for category text
+      categoryBlueBg: "#CDE7FF", // Slightly brighter background for category
+      categoryGreenText: "#027A48", // Brighter green for category text
+      categoryGreenBg: "#D8FFD8", // Slightly brighter background for category
+      categoryYellowText: "#8B8000", // Brighter yellow for category text
+      categoryYellowBg: "#FFF6ED", // Slightly brighter background for category
+      categoryOrangeText: "#FF8C00", // Brighter orange for category text
+      categoryOrangeBg: "#FFDDD6", // Slightly brighter background for category
+      categoryPinkText: "#FF88B2", // Brighter pink for category text
+      categoryPinkBg: "#FFC6DE", // Slightly brighter background for category
+      categoryCyanText: "#008B8B", // Brighter cyan for category text
+      categoryCyanBg: "#D6FFFF",
     },
     container: {
       center: true,
