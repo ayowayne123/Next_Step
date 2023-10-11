@@ -125,7 +125,7 @@ function Recent() {
           </div>
         </div>
         <div className="w-full grid lg:grid-cols-2 lg:col-span-2 gap-8">
-          <div className="relative md:h-[250px]  h-[200px]  w-full mb-8">
+          <div className="relative md:h-[250px]  h-[200px]  w-full lg:mb-8">
             <Image
               src={RecentBlogPosts[3].image}
               alt={RecentBlogPosts[3].title}

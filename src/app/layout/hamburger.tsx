@@ -20,7 +20,7 @@ function Menu() {
         <AiOutlineMenu />
       </button>
       {open && (
-        <div className="fixed inset-0 h-screen  bg-black text-white">
+        <div className="fixed inset-0 h-screen  bg-black text-white z-20">
           <div className="h-full flex flex-col items-center justify-center gap-14 relative">
             <div className="text-lg  font-semibold">NextStep</div>
             <div className="flex flex-col items-center justify-center gap-9 text-lg font-normal">

@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.portable {
+  @apply dark:text-darkGrey  text-black;
+}
+
+.portable h1 {
+  @apply text-2xl;
+}
+.portable h2 {
+  @apply text-2xl text-white my-5;
+}
+.portable h3 {
+  @apply text-lg my-2;
+}
+.portable p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 12px;
+  align-self: stretch;
+}
+
+.portable h1,
+.portable h2,
+.portable h3,
+.portable h4,
+.portable h5,
+.portable h6 {
+  font-weight: bold; /* Example: Making all headings bold */
+}
+/* Styling unordered lists (ul) */
+.portable ul {
+  list-style-type: disc; /* Example: Using disc bullets */
+  margin-left: 24px; /* Example: Adding left margin to lists */
+  margin-bottom: 12px;
+}
+
+/* Styling ordered lists (ol) */
+.portable ol {
+  list-style-type: decimal; /* Example: Using decimal numbering */
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+
+/* Styling list items (li) within ul and ol */
+.portable li {
+  margin-bottom: 4px; /* Example: Adding bottom margin to list items */
+}
+
+/* Styling block quotes */
+.portable blockquote {
+  border-left: 4px solid #333; /* Example: Adding a left border to block quotes */
+  padding-left: 12px; /* Example: Adding left padding to block quotes */
+  margin: 12px 0; /* Example: Adding margin around block quotes */
+  font-style: italic; /* Example: Making block quotes italic */
+}
