@@ -7,11 +7,15 @@ import Image from "next/image";
 
 type Props = {
   params: { post: string };
-  value: string;
-  isInline: boolean;
 };
 
-const SampleImageComponent = ({ value, isInline }) => {
+const SampleImageComponent = ({
+  value,
+  isInline,
+}: {
+  value: string;
+  isInline: boolean;
+}) => {
   const { width, height } = getImageDimensions(value);
   const builder = urlBuilder({
     projectId: "mdslvvw4",
@@ -26,7 +30,7 @@ const SampleImageComponent = ({ value, isInline }) => {
         .fit("max")
         .auto("format")
         .url()}
-      alt={value.alt || "image "}
+      alt={"image "}
       loading="lazy"
       width={isInline ? 100 : width}
       height={isInline ? 100 : height}
@@ -54,7 +58,7 @@ export default async function Post({ params }: Props) {
 
   const formatDate = (date: Date) => {
     if (date instanceof Date) {
-      if (date instanceof Date && !isNaN(date)) {
+      if (date instanceof Date) {
         const options: Intl.DateTimeFormatOptions = {
           weekday: "long", // "Friday"
           day: "numeric", // "1"
