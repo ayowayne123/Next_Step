@@ -50,12 +50,13 @@ const SampleImageComponent = ({
 };
 
 const Code = (value: any) => {
-  console.log(value);
+  console.log(value.highlightedLines);
   return (
     <Refractor
       // In this example, `props` is the value of a `code` field
-      language={value.renderNode.language || "js"}
+      language={value.renderNode.language || "javascript"}
       value={value.value.code}
+      markers={value.highlightedLines}
     />
   );
 };
