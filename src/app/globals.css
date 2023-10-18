@@ -58,3 +58,15 @@
   margin: 12px 0; /* Example: Adding margin around block quotes */
   font-style: italic; /* Example: Making block quotes italic */
 }
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+code {
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  color: #333;
+}

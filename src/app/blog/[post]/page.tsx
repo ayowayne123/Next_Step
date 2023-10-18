@@ -4,6 +4,10 @@ import { getPost } from "@/app/utils/sanity-utils";
 import urlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
+import Refractor, { hasLanguage } from "react-refractor";
+import js from "refractor/lang/javascript";
+
+Refractor.registerLanguage(js);
 
 type Props = {
   params: { post: string };
@@ -45,16 +49,26 @@ const SampleImageComponent = ({
   );
 };
 
+const Code = (value: any) => {
+  console.log(value);
+  return (
+    <Refractor
+      // In this example, `props` is the value of a `code` field
+      language={value.renderNode.language || "js"}
+      value={value.value.code}
+    />
+  );
+};
 const components = {
   types: {
     image: SampleImageComponent,
+    myCodeField: Code,
   },
 };
 
 export default async function Post({ params }: Props) {
   const slug = params.post;
   const post = await getPost(slug);
-  console.log(post.body);
 
   const formatDate = (date: Date) => {
     if (date instanceof Date) {
@@ -74,24 +88,24 @@ export default async function Post({ params }: Props) {
 
   return (
     <article className="dark:text-darkGrey  text-black container ">
-      <div key={post._id} className="lg:w-3/4 flex flex-col gap-8">
+      <div key={post?._id} className="lg:w-3/4 flex flex-col gap-8">
         <div className="text-sm text-darkPurple font-semibold">
           {" "}
-          {formatDate(new Date(post.publishedAt))}
+          {formatDate(new Date(post?.publishedAt))}
         </div>
         <h2 className="text-4xl font-bold  dark:text-white  text-black ">
-          {post.title}
+          {post?.title}
         </h2>
         <div className="relative w-full h-[425px]">
           <Image
-            src={post.mainImage}
+            src={post?.mainImage}
             alt="main Image"
             className="object-cover"
             fill
           />
         </div>
         <div className="portable py-4">
-          <PortableText value={post.body} components={components} />
+          <PortableText value={post?.body} components={components} />
         </div>
       </div>
     </article>
