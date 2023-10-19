@@ -62,7 +62,7 @@ const Code = (value: any) => {
       </span>
       <Refractor
         // In this example, `props` is the value of a `code` field
-        language={value.value.language}
+        language={value.value.language || "javascript"}
         value={value.value.code}
         markers={value.highlightedLines}
       />
