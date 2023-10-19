@@ -6,6 +6,7 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 import Refractor, { hasLanguage } from "react-refractor";
 import js from "refractor/lang/javascript";
+import Clipboard from "./clipboard";
 
 Refractor.registerLanguage(js);
 
@@ -50,14 +51,19 @@ const SampleImageComponent = ({
 };
 
 const Code = (value: any) => {
-  console.log(value.highlightedLines);
+  const codeToCopy = value.value.code;
   return (
-    <Refractor
-      // In this example, `props` is the value of a `code` field
-      language={value.renderNode.language || "javascript"}
-      value={value.value.code}
-      markers={value.highlightedLines}
-    />
+    <div className="bg-[#343444] ">
+      <span className="flex flex-row justify-between  items-center px-4 py-2 text-white  text-xs font-semibold ">
+        {value.value.filename} <Clipboard code={codeToCopy} />{" "}
+      </span>
+      <Refractor
+        // In this example, `props` is the value of a `code` field
+        language={value.renderNode.language || "javascript"}
+        value={value.value.code}
+        markers={value.highlightedLines}
+      />
+    </div>
   );
 };
 const components = {

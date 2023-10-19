@@ -30,7 +30,7 @@
 .portable h4,
 .portable h5,
 .portable h6 {
-  font-weight: bold; /* Example: Making all headings bold */
+  @apply font-bold dark:text-darkGrey  text-black;
 }
 /* Styling unordered lists (ul) */
 .portable ul {
@@ -59,30 +59,15 @@
   font-style: italic; /* Example: Making block quotes italic */
 }
 
-/* pre {
-  background-color: #f4f4f4;
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-
-code {
-  font-family: "Courier New", monospace;
-  font-size: 16px;
-  color: #333;
-} */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: black;
-  background: none;
-  text-shadow: 0 1px white;
+  @apply text-white text-left leading-6;
+
   font-family: "Courier New", Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
-
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -119,13 +104,13 @@ code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
-  margin: 0.5em 0;
+
   overflow: auto;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #f5f2f0;
+  @apply bg-[#000];
 }
 
 /* Inline code */
@@ -175,7 +160,6 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string {
   color: #9a6e3a;
-  background: hsla(0, 0%, 100%, 0.5);
 }
 
 .token.atrule,
