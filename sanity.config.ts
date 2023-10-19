@@ -9,7 +9,6 @@ const config = defineConfig({
   dataset: "production",
   title: "Next Step",
   apiVersion: "2023-10-09",
-  useCdn: true,
   basePath: "/admin",
   plugins: [deskTool(), codeInput(), visionTool()],
   schema: { types: schemas },

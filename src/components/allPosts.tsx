@@ -47,7 +47,7 @@ function AllPosts({ AllPosts }: { AllPosts: any[] }) {
     return "Invalid Input";
   };
 
-  console.log(AllPosts);
+  console.log(AllPosts[0].body);
   return (
     <section className="text-black dark:text-white container lg:py-[30px]  py-8  ">
       <div className="text-2xl mb-4 md:mb-6 lg:mb-8">All Blog Posts</div>

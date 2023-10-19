@@ -65,7 +65,7 @@ export default defineType({
     defineArrayMember({
       type: "code",
       name: "myCodeField",
-      title: "Code with all options",
+      title: "Code with options",
       options: {
         language: "javascript",
         languageAlternatives: [

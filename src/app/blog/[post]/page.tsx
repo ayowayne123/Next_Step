@@ -6,8 +6,10 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 import Refractor, { hasLanguage } from "react-refractor";
 import js from "refractor/lang/javascript";
+import php from "refractor/lang/php";
 import Clipboard from "./clipboard";
 
+Refractor.registerLanguage(php);
 Refractor.registerLanguage(js);
 
 type Props = {
@@ -51,6 +53,7 @@ const SampleImageComponent = ({
 };
 
 const Code = (value: any) => {
+  console.log(value.value.code);
   const codeToCopy = value.value.code;
   return (
     <div className="bg-[#343444] ">
@@ -59,7 +62,7 @@ const Code = (value: any) => {
       </span>
       <Refractor
         // In this example, `props` is the value of a `code` field
-        language={value.renderNode.language || "javascript"}
+        language={value.value.language}
         value={value.value.code}
         markers={value.highlightedLines}
       />

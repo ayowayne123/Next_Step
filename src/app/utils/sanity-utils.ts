@@ -1,9 +1,9 @@
 import { createClient, groq } from "next-sanity";
 import { Post } from "@/app/types/post";
-import clientConfig from "@/app/client";
+import config from "@/app/client";
 
 export async function getPosts(): Promise<Post[]> {
-  return createClient(clientConfig).fetch(
+  return createClient(config).fetch(
     groq`*[_type == "post"]{
       
       _id,
@@ -20,7 +20,7 @@ export async function getPosts(): Promise<Post[]> {
 }
 
 export async function getPost(slug: string): Promise<Post> {
-  return createClient(clientConfig).fetch(
+  return createClient(config).fetch(
     groq`*[_type == "post" && slug.current == $slug][0]{
         _id,
         publishedAt,
